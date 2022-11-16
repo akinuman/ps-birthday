@@ -1,0 +1,131 @@
+@import 'mixins';
+$smallSectionPadding: 26px;
+$smallSectionPaddingLg: 50px;
+
+$mediumSectionPadding: 34px;
+$mediumSectionPaddingLg: 66px;
+
+$sectionPadding: 50px;
+$sectionPaddingLg: 82px;
+
+$largeSectionPadding: 50px;
+$largeSectionPaddingMd: 74px;
+$largeSectionPaddingLg: 98px;
+
+$xLargeSectionPadding: 50px;
+$xLargeSectionPaddingMd: 95px;
+$xLargeSectionPaddingLg: 120px;
+
+.container,
+.container-dm,
+.container-s-lg,
+.container-lg,
+.container-xl,
+.container-expand {
+  @include clamp('padding-left', rem(10px), rem(48px), $xs, $lg);
+  @include clamp('padding-right', rem(10px), rem(48px), $xs, $lg);
+  max-width: $containerMaxWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-s-lg {
+  max-width: 1328px;
+}
+.container-lg {
+  max-width: $containerLgMaxWidth;
+}
+.container-xl {
+  max-width: $containerXlMaxWidth;
+}
+.container-expand {
+  max-width: none;
+}
+
+.section-sm {
+  @include clamp('padding-top', rem($smallSectionPadding), rem($smallSectionPaddingLg), $xs, $lg);
+  @include clamp('padding-bottom', rem($smallSectionPadding), rem($smallSectionPaddingLg), $xs, $lg);
+}
+.section-md {
+  @include clamp('padding-top', rem($mediumSectionPadding), rem($mediumSectionPaddingLg), $xs, $lg);
+  @include clamp('padding-bottom', rem($mediumSectionPadding), rem($mediumSectionPaddingLg), $xs, $lg);
+}
+.section {
+  @include clamp('padding-top', rem($sectionPadding), rem($sectionPaddingLg), $xs, $lg);
+  @include clamp('padding-bottom', rem($sectionPadding), rem($sectionPaddingLg), $xs, $lg);
+}
+.section-lg {
+  @include clamp('padding-top', rem($largeSectionPadding), rem($largeSectionPaddingLg), $xs, $lg);
+  @include clamp('padding-bottom', rem($largeSectionPadding), rem($largeSectionPaddingLg), $xs, $lg);
+}
+.section-xl {
+  @include clamp('padding-top', rem($xLargeSectionPadding), rem($xLargeSectionPaddingLg), $xs, $lg);
+  @include clamp('padding-bottom', rem($xLargeSectionPadding), rem($xLargeSectionPaddingLg), $xs, $lg);
+}
+
+.container.rounded-lg[class^='bg-'],
+.container.rounded-lg[class*=' bg-'],
+.container-lg.rounded-lg[class^='bg-'],
+.container-lg.rounded-lg[class*=' bg-'] {
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.container.rounded-lg[class^='bg-'],
+.container.rounded-lg[class*=' bg-'] {
+  @media (min-width: $containerMaxWidth) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.container-lg.rounded-lg[class^='bg-'],
+.container-lg.rounded-lg[class*=' bg-'] {
+  @media (min-width: $containerLgMaxWidth) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.main-content {
+  > .section:nth-of-type(1) {
+    padding-top: calc(#{rem($sectionPadding)} + #{$headerHeight});
+    padding-bottom: calc(#{rem($sectionPadding)} + #{$headerHeight});
+    @media screen and (min-width: $lg) {
+      padding-top: calc(#{rem($sectionPaddingLg)} + #{$headerHeightLg});
+      padding-bottom: calc(#{rem($sectionPaddingLg)} + #{$headerHeightLg});
+    }
+  }
+  > .section-lg:nth-of-type(1) {
+    padding-top: calc(#{rem($largeSectionPadding)} + #{$headerHeight});
+    padding-bottom: calc(#{rem($largeSectionPadding)} + #{$headerHeight});
+    @media screen and (min-width: $md) {
+      padding-top: calc(#{rem($largeSectionPaddingMd)} + #{$headerHeight});
+      padding-bottom: calc(#{rem($largeSectionPaddingMd)} + #{$headerHeight});
+    }
+    @media screen and (min-width: $lg) {
+      padding-top: calc(#{rem($largeSectionPaddingLg)} + #{$headerHeightLg});
+      padding-bottom: calc(#{rem($largeSectionPaddingLg)} + #{$headerHeightLg});
+    }
+  }
+  > .section-xl:nth-of-type(1) {
+    padding-top: calc(#{rem($xLargeSectionPadding)} + #{$headerHeight});
+    padding-bottom: calc(#{rem($xLargeSectionPadding)} + #{$headerHeight});
+    @media screen and (min-width: $md) {
+      padding-top: calc(#{rem($xLargeSectionPaddingMd)} + #{$headerHeight});
+      padding-bottom: calc(#{rem($xLargeSectionPaddingMd)} + #{$headerHeight});
+    }
+    @media screen and (min-width: $lg) {
+      padding-top: calc(#{rem($xLargeSectionPaddingLg)} + #{$headerHeightLg});
+      padding-bottom: calc(#{rem($xLargeSectionPaddingLg)} + #{$headerHeightLg});
+    }
+  }
+  > .section.pt-0:nth-of-type(1) {
+    padding-top: $headerHeight;
+    padding-bottom: $headerHeight;
+    @media screen and (min-width: $lg) {
+      padding-top: $headerHeightLg;
+      padding-bottom: $headerHeightLg;
+    }
+  }
+}

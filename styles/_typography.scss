@@ -1,0 +1,32 @@
+@import 'mixins';
+
+$xs: rem(400px);
+$lg: rem(1920px);
+
+.t-12 {
+  @include clamp('font-size', rem(8px), rem(12px), $xs, $lg);
+}
+.t-18 {
+  @include clamp('font-size', rem(14px), rem(18px), $xs, $lg);
+}
+.t-16 {
+  @include clamp('font-size', rem(14px), rem(16px), $xs, $lg);
+}
+.t-24 {
+  @include clamp('font-size', rem(20px), rem(24px), $xs, $lg);
+}
+.t-32 {
+  @include clamp('font-size', rem(12px), rem(32px), $xs, $lg);
+}
+.t-50 {
+  @include clamp('font-size', rem(10px), rem(50px), $xs, $lg);
+}
+.t-14 {
+  @include clamp('font-size', rem(12px), rem(14px), $xs, $lg);
+}
+.t-150 {
+  @include clamp('font-size', rem(50px), rem(154px), $xs, $lg);
+}
+.t-96 {
+  @include clamp('font-size', rem(75px), rem(96px), $xs, $lg);
+}

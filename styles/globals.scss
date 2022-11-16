@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+$xs: 480px;
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xxl: 1440px;
+$xxxl: 1600px;
+
+$headerHeight: 62px;
+$headerHeightLg: 85px;
+
+$containerMaxWidth: 1440px;
+$containerLgMaxWidth: 1460px;
+$containerXlMaxWidth: 1600px;
+
+@import 'typography';
+@import 'mixins';
+@import 'section';
+@import 'misc';
+
+@layer base {
+  body {
+    @apply font-kanit;
+  }
+}
