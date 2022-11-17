@@ -8,8 +8,8 @@ const PartnersList = () => {
   return (
     <ul>
       {sortedPartners?.map((partner) => {
-        if (partner.distance > 100) return null;
-        return <List key={partner.id} {...partner} />;
+        if (partner.distance < 100)
+          return <List key={partner.id} {...partner} />;
       })}
     </ul>
   );
